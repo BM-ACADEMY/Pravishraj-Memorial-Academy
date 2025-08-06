@@ -18,25 +18,23 @@ const Header = () => {
   }, []);
 
   const topBarLinks = [
-    { name: "Alumni", path: "/alumni" },
-    { name: "Calendar", path: "/calendar" },
-    { name: "Portal", path: "/portal" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Our Staff", path: "/ourstaff" },
   ];
 
   const mainNavLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "About", path: "/about" },
     {
-      name: "Services",
-      path: "/services",
+      name: "Courses",
+      path: "/courses",
       hasDropdown: true,
       dropdownContent: [
-        { name: "About Us", path: "/about", description: "Learn about our university" },
-        { name: "Our Team", path: "/team", description: "Meet our faculty" },
-        { name: "Events", path: "/events", description: "Upcoming university events" },
+        { name: "Alagappa University", path: "/Course ", description: "Centre for Distance Education" },
+        { name: "Bharathidasan University", path: "/Course ", description: "Centre for Distance Education" },
       ],
     },
-    { name: "Courses", path: "/courses" },
+    { name: "Testimonials", path: "/testimonials" },
   ];
 
   // Animation variants for dropdown

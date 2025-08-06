@@ -72,6 +72,11 @@ const Aboutus = () => {
 
      <section className="bg-gradient-to-br from-[#1b2945] to-[#2c3e50] py-20 px-8 md:px-16 lg:px-24 relative overflow-hidden">
   <div className="absolute inset-0 bg-pattern opacity-10"></div>
+   <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-[white]">
+          University Tie-ups
+        </h2>
+      </div>
   <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
     {/* Alagappa University Card */}
     <div className="bg-[#253248] border-amber-100 border rounded-xl shadow-2xl p-8 transform transition-all  hover:shadow-3xl">

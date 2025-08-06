@@ -125,7 +125,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-[95vh] overflow-hidden group bg-black">
+    <div className="relative w-full h-[95vh] overflow-hidden group bg-black" id="home">
       <AnimatePresence mode="popLayout">
         <motion.div
           key={currentSlide}

@@ -7,6 +7,10 @@ import MissionVision from './Pages/Ourmissionvision'
 import SocialSidebar from './Pages/Floatingicon'
 import Testimonial21 from './Pages/Testimonial'
 import Footer from './Pages/Layout/Footer'
+import { CarouselDemo } from './Pages/Carousleimage'
+import { Staffsection } from './Pages/Staffsection'
+import CourseCarousel from './Pages/ProgramsAccordion'
+import WhatsappFloatButton from './Pages/WhatsappFloatButton'
 
 
 const App = () => {
@@ -21,8 +25,13 @@ const App = () => {
       <MissionVision/>
 
       <AboutSection/>
+      <CourseCarousel/>
       <SocialSidebar/>
+      <CarouselDemo/>
+      <Staffsection/>
       <Testimonial21/>
+      <WhatsappFloatButton/>
+
       <Footer/>
     </div>
   )

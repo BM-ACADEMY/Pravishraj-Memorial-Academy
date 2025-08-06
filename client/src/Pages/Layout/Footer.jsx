@@ -1,24 +1,42 @@
-import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
-} from 'lucide-react';
+import React from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import Logo from "@/assets/img/logo.png";
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: <Facebook size={16} />, href: "#" },
-    { icon: <Twitter size={16} />, href: "#" },
-    { icon: <Instagram size={16} />, href: "#" },
-    { icon: <Linkedin size={16} />, href: "#" },
-    { icon: <Instagram size={16} />, href: "#" },
-  ];
-
   const menuLinks = [
-    { title: "Menu", links: ["About", "Blog", "Contact", "Pages"] },
-    { title: "Blog", links: ["Quote", "Post", "Video Post", "Gallery"] },
-    { title: "Company", links: ["Select", "Services", "Payment"] },
-    { title: "Services", links: ["Option", "Privling Page", "Account"] },
+    { title: "Menu", links: ["Home", "About", "Courses"] },
+    {
+      title: "University Tie-ups",
+      links: ["Alagappa University", "Bharathidasan University"],
+    },
+    {
+      title: "Alagappa University",
+      links: [
+        {
+          programs: [
+            "UG Programs",
+            "PG Programs",
+            "M.B.A Groups",
+            "Diploma Programs",
+            "Certificate Programs",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Bharathidasan University",
+      links: [
+        {
+          programs: [
+            "UG Programs",
+            "PG Programs",
+            "M.B.A Groups",
+            "Diploma Programs",
+            "Certificate Programs",
+          ],
+        },
+      ],
+    },
   ];
 
   return (
@@ -27,43 +45,79 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 text-left sm:text-left">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <h2 className="font-bold text-2xl">Easy Frontend</h2>
-            <div className="mt-3">
-              <p className="opacity-50 max-w-xs mx-auto sm:mx-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                <img src={Logo} alt="Logo" className="w-32 h-14" />
+              </div>
+              <div className="text-xl font-bold text-left text-white leading-tight">
+                <span className="block text-md">Pravishraj</span>
+                <span className="block text-md">Memorial Academy</span>
+              </div>
+            </div>
+            <div className="mt-4 max-w-sm">
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Empowering developers with intuitive tools and resources to
+                create stunning, user-friendly web experiences effortlessly.
               </p>
             </div>
 
-            <h5 className="mt-8 lg:mt-10 mb-3 text-lg font-medium">Follow Us</h5>
-            <ul className="flex justify-left sm:justify-start gap-3">
-              {socialLinks.map((social, index) => (
-                <li key={index}>
-                  <a
-                    href={social.href}
-                    className="w-8 h-8 bg-[#2e2f41] flex items-center justify-center rounded-full 
-                    hover:bg-blue-600 transition-colors duration-300"
-                  >
-                    {social.icon}
-                  </a>
-                </li>
-              ))}
+            {/* Updated Connect With Us */}
+            <h5 className="mt-8 lg:mt-10 mb-3 text-lg font-semibold tracking-wide">
+              Connect With Us
+            </h5>
+            <ul className="flex flex-col gap-4 text-sm text-gray-300">
+              <li className="flex items-center gap-2">
+                <Phone className="text-[#48b06c]" size={18} />
+                <a href="tel:+919876543210" className="hover:text-[#48b06c]">
+                  +91 98765 43210
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="text-[#48b06c]" size={18} />
+                <a href="mailto:info@pma.in" className="hover:text-[#48b06c]">
+                  info@pma.in
+                </a>
+              </li>
+              <li className="flex gap-3 items-start">
+  <MapPin className="text-[#48b06c] min-w-[20px] mt-1" size={18} />
+  <span className="text-sm md:text-base leading-relaxed">
+    No. 27, 1st Cross, 1st Floor, Bharkath Nagar, M.G. Road,
+    (Kaitheye Millath Arch Opp), Villupuram District,<br className="hidden md:block" />
+    Tamil Nadu – 605104
+  </span>
+</li>
+
             </ul>
           </div>
 
           {/* Menu Columns */}
           {menuLinks.map((menu, index) => (
             <div key={index} className="lg:col-span-2">
-              <h5 className="mb-3 text-lg font-medium">{menu.title}</h5>
+              <h5 className="mb-3 text-lg font-semibold tracking-wide">
+                {menu.title}
+              </h5>
               <ul className="flex flex-col gap-2">
                 {menu.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href="#!"
-                      className="opacity-50 hover:opacity-100 transition-opacity duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
+                  <React.Fragment key={`${index}-${linkIndex}`}>
+                    {typeof link === "string" ? (
+                      <li>
+                        <a
+                          href="#!"
+                          className="text-gray-300 text-sm hover:text-[#48b06c] transition-colors duration-300"
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    ) : (
+                      link.programs?.map((program, progIndex) => (
+                        <li key={`${index}-${linkIndex}-${progIndex}`}>
+                          <span className="text-gray-300 text-sm">
+                            {program}
+                          </span>
+                        </li>
+                      ))
+                    )}
+                  </React.Fragment>
                 ))}
               </ul>
             </div>
@@ -73,26 +127,19 @@ const Footer = () => {
         <hr className="border-gray-600" />
 
         {/* Footer Bottom */}
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>
-            <p className="opacity-50 text-center md:text-left">
-              Copyright © Easy Frontend, All rights reserved
-            </p>
-          </div>
-          <div>
-            <ul className="flex justify-center md:justify-end gap-4">
-              {["Privacy", "Security", "Terms"].map((item, index) => (
-                <li key={index}>
-                  <a
-                    href="#!"
-                    className="opacity-50 hover:opacity-80 transition-opacity duration-300"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-6 text-center">
+          <p className="text-gray-300 text-sm">
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://bmtechx.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#48b06c] font-semibold"
+            >
+              BMTechx.in
+            </a>{" "}
+            All rights reserved.
+          </p>
         </div>
       </div>
     </section>
